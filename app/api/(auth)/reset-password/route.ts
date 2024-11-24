@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
   user.verifyTokenExpiry = Date.now() + 3600000; // Token valid for 1 hour
   await user.save();
 
-  const resetUrl = `http://localhost:3000/reset-password?token=${resetToken}`;
+  const resetUrl = `https://ghiz-read-admin.vercel.app/forgot-password?token=${resetToken}`;
 
   ///
 

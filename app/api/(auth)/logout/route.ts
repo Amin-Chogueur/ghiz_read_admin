@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const response = NextResponse.redirect(
-      new URL("/login", "http://localhost:3000")
+      new URL("/login", "https://ghiz-read-admin.vercel.app")
     ); // Redirect to homepage
 
     response.cookies.set("token", "", {
