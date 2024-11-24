@@ -3,12 +3,14 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
-import Book from "../../components/Book";
 
+import dynamic from "next/dynamic";
 import { useBookContext } from "../../context/BookContext";
 import Pagination from "@/components/Pagination";
 
-export default function Books() {
+const Book = dynamic(() => import("../../components/Book"), { ssr: false });
+
+function Books() {
   const { totalBooks, loading, books, getBooks, setSearch } = useBookContext();
   const [filter, setFilter] = useState("");
   useEffect(() => {
@@ -60,3 +62,5 @@ export default function Books() {
     </div>
   );
 }
+export default dynamic(() => Promise.resolve(Books), { ssr: false });
+
