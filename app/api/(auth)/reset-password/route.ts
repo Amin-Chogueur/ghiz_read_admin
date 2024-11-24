@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
   await resend.emails.send({
     from: "Acme <onboarding@resend.dev>", // replace with your sender email
     to: email, // form input email
-    subject: "Message from  Crox webSite",
+    subject: "Message from  Ghiz-Read-Admin",
     html: `<p>Click <a href="${resetUrl}">here</a> to reset your password.</p>`,
   });
 
